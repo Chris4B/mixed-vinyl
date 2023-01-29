@@ -8,3 +8,10 @@ homepage:
     methods: GET
     path: /
     controller: App\Controller\VinylController::homepage
+
+browse:
+    methods: GET
+    path: /browse/{slug}
+    controller: App\Controller\VinylController::browse
+    defaults:
+        slug:
