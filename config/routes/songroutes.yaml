@@ -1,4 +1,6 @@
 getSong:
   methods: GET
-  path: '/api/songs/{id}'
+  path: '/api/songs/{id}' # on peut aussi écrire {id:\d+}
   controller: App\Controller\SongController::getSong
+  requirements:
+    id: '\d+'

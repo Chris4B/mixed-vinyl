@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SongController extends AbstractController
 {
-    public function getSong($id): Response
+    public function getSong(int $id): Response
     {
         // TODO query the database
         $song = [
