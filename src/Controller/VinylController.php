@@ -35,11 +35,13 @@ class VinylController extends AbstractController
              //the method "title" change all string to title case
          } else{
              $title = 'All Genres';
-         }
+         };
 
+        $genre = $slug ? u(str_replace('-',  ' ',    $slug))->title(true): null;
 
-
-         return new Response('vinyl browse: '.$title );
+         return $this->render('Vinyl/browse.html.twig',[
+            'genre' =>$genre,
+         ]);
      }
 
 
