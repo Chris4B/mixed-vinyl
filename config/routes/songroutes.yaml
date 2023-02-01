@@ -1,0 +1,4 @@
+getSong:
+  methods: GET
+  path: '/api/songs/{id}'
+  controller: App\Controller\SongController::getSong
