@@ -6,11 +6,12 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment;
 use function Symfony\Component\String\u;
 
 class VinylController extends AbstractController
 {
-    public function homepage():Response
+    public function homepage(Environment $twig):Response
     {
         $tracks = [
             ['song'=>'Gansta Paradise', 'artist' =>'Coolio'],
@@ -22,11 +23,20 @@ class VinylController extends AbstractController
 
 
 
+//
+//        return $this->render('Vinyl/homepage.html.twig',[
+//            'title' =>'PB & Jams',
+//            'tracks' => $tracks
+//        ]);
 
-        return $this->render('Vinyl/homepage.html.twig',[
+        $html = $twig->render('Vinyl/homepage.html.twig',[
             'title' =>'PB & Jams',
             'tracks' => $tracks
         ]);
+
+        return new Response($html);
+
+
     }
      public function browse(string $slug = null):Response
      {
