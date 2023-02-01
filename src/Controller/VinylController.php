@@ -10,7 +10,7 @@ use function Symfony\Component\String\u;
 
 class VinylController extends AbstractController
 {
-    public function homepage(Environment $twig):Response
+    public function homepage():Response
     {
         $tracks = [
             ['song'=>'Gansta Paradise', 'artist' =>'Coolio'],
