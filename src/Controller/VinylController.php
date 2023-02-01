@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment;
 use function Symfony\Component\String\u;
 
 class VinylController extends AbstractController
@@ -23,18 +22,11 @@ class VinylController extends AbstractController
 
 
 
-//
-//        return $this->render('Vinyl/homepage.html.twig',[
-//            'title' =>'PB & Jams',
-//            'tracks' => $tracks
-//        ]);
 
-        $html = $twig->render('Vinyl/homepage.html.twig',[
+        return $this->render('Vinyl/homepage.html.twig',[
             'title' =>'PB & Jams',
             'tracks' => $tracks
         ]);
-
-        return new Response($html);
 
 
     }
