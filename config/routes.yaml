@@ -16,10 +16,3 @@ browse:
     defaults:
         slug:
 
-test:
-    methods: GET
-    path: /test/{slug}
-    controller: App\Controller\VinylController::browse
-    defaults:
-        slug:
-
